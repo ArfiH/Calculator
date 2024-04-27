@@ -1,2 +1,2 @@
-Assignment - The Odin Project
-Visit: arfi.github.io/Calculator/https://arfih.github.io/Calculator/
+Assignment - The Odin Project <br>
+Visit: arfi.github.io/Calculator/
