@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'Digital-7';
+    src: url('font/Digital-7.eot');
+    src: url('font/Digital-7.eot?#iefix') format('embedded-opentype'),
+        url('font/Digital-7.woff2') format('woff2'),
+        url('font/Digital-7.woff') format('woff'),
+        url('font/digital-7.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+html, body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    box-sizing: border-box;
+}
+
+:root {
+    --CALCULATOR-BODY-COLOR: rgb(120, 120, 130);
+    --DISPLAY-COLOR: rgb(180, 200, 130);
+    --DIAL-PAD-COLOR: rgb(85, 95, 110);
+    --BUTTON-COLOR: rgb(133, 143, 158);
+    --ACTIVE-BUTTON: rgb(200, 200, 200);
+}
+
+.line {
+    display: flex;
+    justify-content: space-around;
+}
+
+.active {
+    background-color: var(--ACTIVE-BUTTON);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    height: 65vh;
+    background-color: var(--CALCULATOR-BODY-COLOR);
+    border-radius: 20px;
+    padding: 1% 5%;
+    overflow: auto;
+}
+
+.display {
+    display: flex;
+    background-color: var(--DISPLAY-COLOR);
+    width: 100%;
+    height: 15%;
+    justify-content: right;
+    align-items: center;
+    font-family: 'Digital-7';
+    font-size: 4rem;
+}
+
+.dial-pad {
+    background-color: var(--DIAL-PAD-COLOR);
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    padding-bottom: 4%;
+}
+
+button {
+    border: none;
+    color: white;
+    background-color: var(--BUTTON-COLOR);
+    width: 20%;
+    height: auto;
+    margin-inline: 0.2vw;
+    margin-top: 2vh;
+    padding: 4vh 2vw
+}
+
+@media (min-width: 600px) {
+    .container {
+        width: 40vw;
+    }
+}
+
+@media (min-width: 1000px) {
+    .container {
+        width: 25vw;
+    }
+}
