@@ -41,10 +41,10 @@ html, body {
     justify-content: center;
     align-content: center;
     width: 70vw;
-    height: 63vh;
+    height: 45vh;
     background-color: var(--CALCULATOR-BODY-COLOR);
-    border-radius: 20px;
-    padding: 2% 5%;
+    border-radius: 10px;
+    padding: 2vh 2vw;
     overflow: auto;
 }
 
@@ -73,7 +73,6 @@ button {
     background-color: var(--BUTTON-COLOR);
     width: 20%;
     aspect-ratio: 1;
-    margin-inline: 0.2vw;
     margin-top: 5%;
     padding: 5% 5%;
 }
@@ -87,5 +86,6 @@ button {
 @media (min-width: 1000px) {
     .container {
         width: 25vw;
+        height: 75vh;
     }
 }
