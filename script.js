@@ -3,12 +3,11 @@ const buttons = document.querySelectorAll('button');
 const display = document.querySelector('.display');
 let result = 0;
 let operands = [];
-let prevText = 0;
+let prevText = '';
 let isDecimal = false;
 
 buttons.forEach(function(btn) {
     let text = '';
-    btn.style.backgroundColor = "rgb(133, 143, 158)";
     btn.addEventListener("click", function(e) {
         e.preventDefault();
         text = e.target.textContent
@@ -19,8 +18,9 @@ buttons.forEach(function(btn) {
             display.textContent = '';
             result = 0;
             isDecimal = false;
+            operands = [];
         }
-        // x
+        // Operations
         else if (text === 'x' || text == '+' || text == '-') {
             isDecimal = false;
             if (result !== 0) {
@@ -28,22 +28,35 @@ buttons.forEach(function(btn) {
             }
             result = 0;
 
+            // Remove previous button highlight
             const currentActiveBtn = document.querySelector(".active");
             if (currentActiveBtn) {
                 currentActiveBtn.style.backgroundColor = "rgb(133, 143, 158)";
                 currentActiveBtn.classList.remove("active");
             }
+
+            // Add button highlight
             e.target.classList.add("active");
             document.querySelector('.active').style.backgroundColor = "rgb(200, 200, 200)";
             
             // If there are already 2 operands, then calculate
             if (operands.length >= 2) {
-               
+                if (text == '+')
+                    result = operands[0] + operands[1]
+                else if (text == '-')
+                    result = operands[0] - operands[1]
+                else if (text == 'x')
+                    result = operands[0] * operands[1]
+                
+                display.textContent = result;
+                operands = [];
+                operands.push(result);
             }
         }
         
         // =
         else if (text === '=') {
+            // Remove button highlight
             const currentActiveBtn = document.querySelector(".active");
             if (currentActiveBtn) {
                 currentActiveBtn.style.backgroundColor = "rgb(133, 143, 158)";
